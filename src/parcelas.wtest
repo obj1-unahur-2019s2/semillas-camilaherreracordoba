@@ -1,0 +1,17 @@
+import parcelas.*
+import semillas.*
+
+describe "test de parcelas" {
+	
+	 test "parcela" {
+	 	var parcela1 = new Ecologica(ancho = 20, largo = 1, horasDiariasDeSol = 8)
+	 	assert.equals(parcela1.cantidadMaxDePlantas(), 4)
+	 	
+	 	parcela1.plantar(new Soja( anioObtencion = 2009, altura = 1))
+	 	parcela1.plantar(new Soja( anioObtencion = 2009, altura = 1))
+	 	parcela1.plantar(new Soja( anioObtencion = 2009, altura = 1))
+	 	parcela1.plantar(new Soja( anioObtencion = 2009, altura = 1))
+	 	assert.notThat(parcela1.puedePlantar(new Soja( anioObtencion = 2009, altura = 1)))
+	 }
+
+}
